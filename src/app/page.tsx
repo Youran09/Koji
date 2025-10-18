@@ -1,103 +1,251 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import { useState } from 'react';
+import Link from 'next/link';
+import {
+  QrCode,
+  MapPin,
+  Leaf,
+  BookOpen,
+  Play,
+  ChevronRight,
+  Camera,
+  TrendingUp,
+  Award,
+  Users
+} from 'lucide-react';
+
+export default function HomePage() {
+  const [videoPlaying, setVideoPlaying] = useState(false);
+
+  const stats = [
+    { icon: Leaf, value: '2.5t', label: 'CO₂ Saved', color: 'text-green-600' },
+    { icon: TrendingUp, value: '5k+', label: 'kg Diverted', color: 'text-blue-600' },
+    { icon: Users, value: '20+', label: 'Partners', color: 'text-purple-600' },
+    { icon: Award, value: '10k+', label: 'Meals', color: 'text-orange-600' },
+  ];
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="space-y-12">
+      {/* Hero Section */}
+      <section className="container space-y-8 pt-6">
+        <div className="text-center space-y-6">
+          <h1 className="heading-xl animate-fade-in">
+            From Food Waste to{' '}
+            <span className="gradient-text animate-pulse">Fermented Gold</span>
+          </h1>
+          <p className="text-lg max-w-lg mx-auto text-secondary animate-fade-in animation-delay-200">
+            Scan any Koji Copenhagen product to trace its journey from local restaurant waste to your table
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Main CTA */}
+        <div className="text-center space-y-4 animate-slide-up animation-delay-300">
+          <Link href="/scan" className="btn btn-primary btn-large btn-full hover-lift interactive-scale">
+            <QrCode className="w-6 h-6" />
+            Scan Product Now
+          </Link>
+          <Link href="/partners" className="btn btn-glass btn-full hover-lift interactive-scale">
+            <MapPin className="w-5 h-5" />
+            Explore Partners
+          </Link>
+        </div>
+
+        {/* Video Preview */}
+        <div className="card card-interactive p-0 animate-scale-in animation-delay-500">
+          <div className="aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-koji-teal to-koji-teal-dark relative">
+            {!videoPlaying ? (
+              <>
+                <button
+                  onClick={() => setVideoPlaying(true)}
+                  className="absolute inset-0 flex items-center justify-center z-10 group transition-all duration-300"
+                >
+                  <div className="w-20 h-20 glass-effect rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 animate-float">
+                    <Play className="w-10 h-10 text-white ml-2" />
+                  </div>
+                </button>
+                <div className="absolute bottom-6 left-6 text-white">
+                  <p className="text-base font-semibold">Our Story</p>
+                  <p className="text-sm opacity-90">2 minutes</p>
+                </div>
+                <div className="absolute top-4 right-4">
+                  <div className="glass-effect px-3 py-1 rounded-full text-white text-sm font-medium">
+                    Watch Now
+                  </div>
+                </div>
+              </>
+            ) : (
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Grid */}
+      <section className="container">
+        <div className="text-center mb-8">
+          <h2 className="heading-md animate-fade-in">Our Impact</h2>
+          <p className="text-base text-secondary animate-fade-in animation-delay-100">Measuring our positive environmental footprint</p>
+        </div>
+        <div className="impact-grid">
+          {stats.map((stat, index) => {
+            const Icon = stat.icon;
+            return (
+              <div key={index} className={`card card-hover card-content text-center space-y-3 animate-slide-up hover-lift interactive-scale animation-delay-${(index + 1) * 100}`}>
+                <div className="w-12 h-12 mx-auto rounded-xl bg-gradient-to-br from-koji-cream to-koji-cream-dark flex items-center justify-center">
+                  <Icon className={`w-7 h-7 ${stat.color}`} />
+                </div>
+                <div className="impact-value gradient-text">{stat.value}</div>
+                <div className="text-sm text-secondary font-medium">{stat.label}</div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Quick Actions */}
+      <section className="container space-y-6">
+        <div className="text-center">
+          <h2 className="heading-md animate-fade-in">What You Can Do</h2>
+          <p className="text-base text-secondary animate-fade-in animation-delay-100">Explore features that connect you to the circular economy</p>
+        </div>
+
+        <div className="space-y-4">
+          <Link href="/scan" className="card card-hover card-content flex items-center gap-5 p-6 hover-lift interactive-scale animate-slide-in-left">
+            <div className="w-14 h-14 bg-gradient-to-br from-koji-rust to-koji-rust-dark rounded-2xl flex items-center justify-center shadow-lg">
+              <Camera className="w-7 h-7 text-white" />
+            </div>
+            <div className="flex-1">
+              <h3 className="heading-sm mb-1">Scan & Trace</h3>
+              <p className="text-sm text-secondary">See your product's complete journey from waste to table</p>
+            </div>
+            <ChevronRight className="w-6 h-6 text-tertiary transition-transform group-hover:translate-x-1" />
+          </Link>
+
+          <Link href="/partners" className="card card-hover card-content flex items-center gap-5 p-6 hover-lift interactive-scale animate-slide-in-left animation-delay-100">
+            <div className="w-14 h-14 bg-gradient-to-br from-koji-teal to-koji-teal-dark rounded-2xl flex items-center justify-center shadow-lg">
+              <MapPin className="w-7 h-7 text-white" />
+            </div>
+            <div className="flex-1">
+              <h3 className="heading-sm mb-1">Find Partners</h3>
+              <p className="text-sm text-secondary">Discover local restaurants helping build a sustainable future</p>
+            </div>
+            <ChevronRight className="w-6 h-6 text-tertiary transition-transform group-hover:translate-x-1" />
+          </Link>
+
+          <Link href="/learn" className="card card-hover card-content flex items-center gap-5 p-6 hover-lift interactive-scale animate-slide-in-left animation-delay-200">
+            <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <BookOpen className="w-7 h-7 text-white" />
+            </div>
+            <div className="flex-1">
+              <h3 className="heading-sm mb-1">Learn Koji</h3>
+              <p className="text-sm text-secondary">Recipes, guides, and the science of fermentation</p>
+            </div>
+            <ChevronRight className="w-6 h-6 text-tertiary transition-transform group-hover:translate-x-1" />
+          </Link>
+        </div>
+      </section>
+
+      {/* Process Steps */}
+      <section className="container space-y-8">
+        <div className="text-center">
+          <h2 className="heading-md animate-fade-in">How It Works</h2>
+          <p className="text-base text-secondary animate-fade-in animation-delay-100">Our circular process in 4 simple steps</p>
+        </div>
+
+        <div className="space-y-5">
+          {[
+            {
+              step: '1️⃣',
+              title: 'Collect',
+              description: 'Partner restaurants save their high-quality food waste',
+              icon: '🍞',
+              color: 'from-green-500 to-green-600'
+            },
+            {
+              step: '2️⃣',
+              title: 'Inoculate',
+              description: 'We add koji spores to start the fermentation process',
+              icon: '🧪',
+              color: 'from-blue-500 to-blue-600'
+            },
+            {
+              step: '3️⃣',
+              title: 'Ferment',
+              description: 'Controlled environment nurtures growth for 3-5 days',
+              icon: '⏱️',
+              color: 'from-orange-500 to-orange-600'
+            },
+            {
+              step: '4️⃣',
+              title: 'Package',
+              description: 'QR-coded products ready for complete traceability',
+              icon: '📦',
+              color: 'from-purple-500 to-purple-600'
+            },
+          ].map((item, index) => (
+            <div key={index} className={`card card-hover card-content p-6 hover-lift interactive-scale animate-slide-in-right animation-delay-${(index + 1) * 100}`}>
+              <div className="flex items-center gap-6">
+                <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center shadow-lg`}>
+                  <span className="text-3xl">{item.icon}</span>
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-10 h-10 bg-gradient-to-br from-koji-rust to-koji-rust-dark rounded-full flex items-center justify-center shadow-md">
+                      <span className="text-lg">{item.step}</span>
+                    </div>
+                    <h3 className="heading-sm">{item.title}</h3>
+                  </div>
+                  <p className="text-sm text-secondary leading-relaxed">{item.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Featured Partners */}
+      <section className="container space-y-4">
+        <div className="text-center">
+          <h2 className="heading-md">Our Partners</h2>
+          <p className="text-base">Copenhagen's finest establishments</p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-3">
+          {['Fjora CPH', 'Hart Bakery', 'Mirabelle', 'Amass'].map((partner) => (
+            <div key={partner} className="card card-content text-center space-y-2">
+              <div className="w-8 h-8 bg-gradient-to-br from-koji-cream-dark to-gray-200 rounded-full mx-auto"></div>
+              <p className="text-sm font-medium">{partner}</p>
+            </div>
+          ))}
+        </div>
+
+        <Link href="/partners" className="btn btn-ghost btn-full">
+          View All Partners
+        </Link>
+      </section>
+
+      {/* Final CTA */}
+      <section className="container">
+        <div className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-koji-teal via-koji-teal-dark to-koji-rust opacity-90 rounded-3xl"></div>
+          <div className="relative glass-effect text-center space-y-6 p-8 rounded-3xl border border-white/20 animate-scale-in">
+            <h2 className="text-3xl font-bold text-white">Ready to Start?</h2>
+            <p className="text-lg text-white/90 max-w-md mx-auto leading-relaxed">
+              Scan any Koji Copenhagen product to discover its unique story and environmental impact
+            </p>
+            <Link href="/scan" className="btn btn-glass btn-large hover-lift interactive-scale inline-flex">
+              <QrCode className="w-7 h-7" />
+              Scan Now
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
