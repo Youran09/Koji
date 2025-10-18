@@ -12,9 +12,9 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         koji: {
-          rust: "#C85A35",
-          "rust-light": "#D77B5C",
-          "rust-dark": "#A84329",
+          green: "#10B981",
+          "green-light": "#34D399",
+          "green-dark": "#059669",
           teal: "#2C5F5D",
           "teal-light": "#4A7C7A",
           "teal-dark": "#1E4341",

@@ -3,12 +3,6 @@
 @tailwind utilities;
 
 :root {
-  --koji-rust: #C85A35;
-  --koji-rust-light: #D77B5C;
-  --koji-rust-dark: #A84329;
-  --koji-rust-50: rgba(200, 90, 53, 0.05);
-  --koji-rust-100: rgba(16, 185, 129, 0.1);
-  --koji-rust-200: rgba(16, 185, 129, 0.2);
   --koji-teal: #2C5F5D;
   --koji-teal-light: #4A7C7A;
   --koji-teal-dark: #1E4341;
