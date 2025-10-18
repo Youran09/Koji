@@ -1,13 +1,11 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import {
   QrCode,
   MapPin,
   Leaf,
   BookOpen,
-  Play,
   ChevronRight,
   Camera,
   TrendingUp,
@@ -16,7 +14,6 @@ import {
 } from 'lucide-react';
 
 export default function HomePage() {
-  const [videoPlaying, setVideoPlaying] = useState(false);
 
   const stats = [
     { icon: Leaf, value: '2.5t', label: 'CO₂ Saved', color: 'text-green-600' },
@@ -31,7 +28,7 @@ export default function HomePage() {
       <section className="container space-y-8 pt-80">
         <div className="text-center space-y-6">
           <h1 className="heading-xl animate-fade-in">
-            From Food Waste to{' '}
+            Koji Copenhagen From Food Waste to{' '}
             <span className="gradient-text animate-pulse">Fermented Gold</span>
           </h1>
           <p className="text-lg max-w-lg mx-auto text-secondary animate-fade-in animation-delay-200">
@@ -41,49 +38,16 @@ export default function HomePage() {
 
         {/* Main CTA */}
         <div className="text-center space-y-4 animate-slide-up animation-delay-300">
-          <Link href="/scan" className="btn btn-primary btn-large btn-full hover-lift interactive-scale">
+          <Link href="/scan" className="glass-btn w-full text-center inline-flex items-center justify-center gap-3 text-lg py-4">
             <QrCode className="w-6 h-6" />
             Scan Product Now
           </Link>
-          <Link href="/partners" className="btn btn-glass btn-full hover-lift interactive-scale">
+          <Link href="/partners" className="glass-btn-secondary w-full text-center inline-flex items-center justify-center gap-3">
             <MapPin className="w-5 h-5" />
             Explore Partners
           </Link>
         </div>
 
-        {/* Video Preview */}
-        <div className="card card-interactive p-0 animate-scale-in animation-delay-500">
-          <div className="aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-koji-teal to-koji-teal-dark relative">
-            {!videoPlaying ? (
-              <>
-                <button
-                  onClick={() => setVideoPlaying(true)}
-                  className="absolute inset-0 flex items-center justify-center z-10 group transition-all duration-300"
-                >
-                  <div className="w-20 h-20 glass-effect rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 animate-float">
-                    <Play className="w-10 h-10 text-white ml-2" />
-                  </div>
-                </button>
-                <div className="absolute bottom-6 left-6 text-white">
-                  <p className="text-base font-semibold">Our Story</p>
-                  <p className="text-sm opacity-90">2 minutes</p>
-                </div>
-                <div className="absolute top-4 right-4">
-                  <div className="glass-effect px-3 py-1 rounded-full text-white text-sm font-medium">
-                    Watch Now
-                  </div>
-                </div>
-              </>
-            ) : (
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            )}
-          </div>
-        </div>
       </section>
 
       {/* Stats Grid */}
@@ -96,7 +60,7 @@ export default function HomePage() {
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
-              <div key={index} className={`card card-hover card-content text-center space-y-3 animate-slide-up hover-lift interactive-scale animation-delay-${(index + 1) * 100}`}>
+              <div key={index} className={`glass-card text-center space-y-3 glass-animate-in animation-delay-${(index + 1) * 100}`}>
                 <div className="w-12 h-12 mx-auto rounded-xl bg-gradient-to-br from-koji-cream to-koji-cream-dark flex items-center justify-center">
                   <Icon className={`w-7 h-7 ${stat.color}`} />
                 </div>
@@ -116,7 +80,7 @@ export default function HomePage() {
         </div>
 
         <div className="space-y-4">
-          <Link href="/scan" className="card card-hover card-content flex items-center gap-5 p-6 hover-lift interactive-scale animate-slide-in-left">
+          <Link href="/scan" className="glass-card flex items-center gap-5 p-6 glass-animate-in">
             <div className="w-14 h-14 bg-gradient-to-br from-koji-rust to-koji-rust-dark rounded-2xl flex items-center justify-center shadow-lg">
               <Camera className="w-7 h-7 text-white" />
             </div>
@@ -127,7 +91,7 @@ export default function HomePage() {
             <ChevronRight className="w-6 h-6 text-tertiary transition-transform group-hover:translate-x-1" />
           </Link>
 
-          <Link href="/partners" className="card card-hover card-content flex items-center gap-5 p-6 hover-lift interactive-scale animate-slide-in-left animation-delay-100">
+          <Link href="/partners" className="glass-card flex items-center gap-5 p-6 glass-animate-in">
             <div className="w-14 h-14 bg-gradient-to-br from-koji-teal to-koji-teal-dark rounded-2xl flex items-center justify-center shadow-lg">
               <MapPin className="w-7 h-7 text-white" />
             </div>
@@ -138,7 +102,7 @@ export default function HomePage() {
             <ChevronRight className="w-6 h-6 text-tertiary transition-transform group-hover:translate-x-1" />
           </Link>
 
-          <Link href="/learn" className="card card-hover card-content flex items-center gap-5 p-6 hover-lift interactive-scale animate-slide-in-left animation-delay-200">
+          <Link href="/learn" className="glass-card flex items-center gap-5 p-6 glass-animate-in">
             <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
               <BookOpen className="w-7 h-7 text-white" />
             </div>
@@ -189,7 +153,7 @@ export default function HomePage() {
               color: 'from-purple-500 to-purple-600'
             },
           ].map((item, index) => (
-            <div key={index} className={`card card-hover card-content p-6 hover-lift interactive-scale animate-slide-in-right animation-delay-${(index + 1) * 100}`}>
+            <div key={index} className={`glass-card p-6 glass-animate-in animation-delay-${(index + 1) * 100}`}>
               <div className="flex items-center gap-6">
                 <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center shadow-lg`}>
                   <span className="text-3xl">{item.icon}</span>

@@ -32,15 +32,15 @@ export default function ScanPage() {
     <div className="space-y-6">
       {/* Scanner Section */}
       <section className="container pt-4">
-        <div className="card card-content space-y-6">
+        <div className="glass-scanner space-y-6">
           <QRScanner onScan={handleScan} onError={handleError} />
 
           {error && (
-            <div className="card card-content bg-red-50 border-red-200">
+            <div className="glass-card bg-red-50/20 border-red-300/30">
               <p className="text-sm text-red-700">{error}</p>
               <button
                 onClick={() => setError(null)}
-                className="btn btn-ghost btn-small mt-2"
+                className="glass-btn-ghost mt-2"
               >
                 Try Again
               </button>
@@ -80,7 +80,7 @@ export default function ScanPage() {
               icon: '🌱',
             },
           ].map((item, index) => (
-            <div key={index} className="card card-content">
+            <div key={index} className="glass-card">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-koji-rust to-koji-rust-dark rounded-xl flex items-center justify-center">
                   <span className="text-2xl">{item.icon}</span>
@@ -102,7 +102,7 @@ export default function ScanPage() {
 
       {/* No Product Yet? */}
       <section className="container">
-        <div className="impact-card text-center space-y-4">
+        <div className="glass-hero text-center space-y-4">
           <Package2 className="w-12 h-12 mx-auto" />
           <div>
             <h3 className="text-xl font-bold mb-2">Don't have a product yet?</h3>
@@ -111,13 +111,13 @@ export default function ScanPage() {
             </p>
           </div>
           <div className="space-y-3">
-            <Link href="/shop" className="btn btn-secondary btn-large btn-full">
+            <Link href="/shop" className="glass-btn-secondary w-full text-center inline-flex items-center justify-center gap-3 py-3">
               <ShoppingBag className="w-6 h-6" />
               Shop Products
             </Link>
             <button
               onClick={() => router.push('/batch/KC2025-001')}
-              className="btn btn-ghost btn-large btn-full text-white"
+              className="glass-btn-ghost w-full text-center inline-flex items-center justify-center gap-3 py-3 text-white"
             >
               <Lightbulb className="w-6 h-6" />
               View Demo Journey
@@ -131,7 +131,7 @@ export default function ScanPage() {
         <h2 className="heading-md text-center">Scanning Tips</h2>
 
         <div className="grid gap-3">
-          <div className="card card-content flex items-center gap-4">
+          <div className="glass-list-item flex items-center gap-4">
             <div className="w-12 h-12 bg-gradient-to-br from-koji-rust to-koji-rust-dark rounded-xl flex items-center justify-center">
               <span className="text-2xl">💡</span>
             </div>
@@ -146,7 +146,7 @@ export default function ScanPage() {
             </div>
           </div>
 
-          <div className="card card-content flex items-center gap-4">
+          <div className="glass-list-item flex items-center gap-4">
             <div className="w-12 h-12 bg-gradient-to-br from-koji-rust to-koji-rust-dark rounded-xl flex items-center justify-center">
               <span className="text-2xl">🎯</span>
             </div>
@@ -161,7 +161,7 @@ export default function ScanPage() {
             </div>
           </div>
 
-          <div className="card card-content flex items-center gap-4">
+          <div className="glass-list-item flex items-center gap-4">
             <div className="w-12 h-12 bg-gradient-to-br from-koji-rust to-koji-rust-dark rounded-xl flex items-center justify-center">
               <span className="text-2xl">⚡</span>
             </div>
@@ -184,7 +184,7 @@ export default function ScanPage() {
         <p className="text-base text-center">See what others have found</p>
 
         <div className="space-y-3">
-          <div className="card card-content">
+          <div className="glass-list-item">
             <div className="flex justify-between items-start mb-2">
               <h4 className="heading-sm">Barley Miso - 6 Month</h4>
               <span className="badge badge-rust">Just scanned</span>
@@ -196,7 +196,7 @@ export default function ScanPage() {
             </div>
           </div>
 
-          <div className="card card-content">
+          <div className="glass-list-item">
             <div className="flex justify-between items-start mb-2">
               <h4 className="heading-sm">Fresh Koji Starter</h4>
               <span className="badge badge-teal">2 hours ago</span>
