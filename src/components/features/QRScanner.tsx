@@ -41,10 +41,7 @@ export default function QRScanner({ onScan, onError }: QRScannerProps) {
           }
         },
         (error) => {
-          // Suppress frequent scanning errors
-          if (!error.includes('No QR code found')) {
-            console.log('Scan error:', error);
-          }
+          // Suppress frequent scanning errors - only log unexpected errors
         }
       );
 
@@ -53,7 +50,9 @@ export default function QRScanner({ onScan, onError }: QRScannerProps) {
 
     return () => {
       if (scannerRef.current) {
-        scannerRef.current.clear().catch(console.error);
+        scannerRef.current.clear().catch(() => {
+          // Silently handle cleanup errors
+        });
         scannerRef.current = null;
       }
     };
@@ -128,20 +127,20 @@ export default function QRScanner({ onScan, onError }: QRScannerProps) {
           <h4 className="heading-sm text-center">Scanning Tips</h4>
           <div className="space-y-2 text-sm">
             <div className="flex items-center gap-3">
-              <div className="w-6 h-6 bg-koji-rust/10 rounded-full flex items-center justify-center">
-                <span className="text-koji-rust text-xs font-bold">1</span>
+              <div className="w-6 h-6 bg-koji-green/10 rounded-full flex items-center justify-center">
+                <span className="text-koji-green text-xs font-bold">1️⃣</span>
               </div>
               <span>Hold steady and ensure good lighting</span>
             </div>
             <div className="flex items-center gap-3">
-              <div className="w-6 h-6 bg-koji-rust/10 rounded-full flex items-center justify-center">
-                <span className="text-koji-rust text-xs font-bold">2</span>
+              <div className="w-6 h-6 bg-koji-green/10 rounded-full flex items-center justify-center">
+                <span className="text-koji-green text-xs font-bold">2️⃣</span>
               </div>
               <span>Position QR code within the frame</span>
             </div>
             <div className="flex items-center gap-3">
-              <div className="w-6 h-6 bg-koji-rust/10 rounded-full flex items-center justify-center">
-                <span className="text-koji-rust text-xs font-bold">3</span>
+              <div className="w-6 h-6 bg-koji-green/10 rounded-full flex items-center justify-center">
+                <span className="text-koji-green text-xs font-bold">3️⃣</span>
               </div>
               <span>Wait for automatic detection</span>
             </div>
@@ -170,8 +169,8 @@ export default function QRScanner({ onScan, onError }: QRScannerProps) {
 
         {/* Overlay with scanning animation */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute inset-4 border-2 border-koji-rust rounded-xl">
-            <div className="absolute top-0 left-0 right-0 h-0.5 bg-koji-rust animate-pulse"></div>
+          <div className="absolute inset-4 border-2 border-koji-green rounded-xl">
+            <div className="absolute top-0 left-0 right-0 h-0.5 bg-koji-green animate-pulse"></div>
           </div>
         </div>
       </div>

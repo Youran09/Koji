@@ -82,7 +82,7 @@ export default function GlassHeader({ className = '' }: GlassHeaderProps) {
       <div className="flex items-center justify-between h-16 px-4">
         {/* Brand Section */}
         <Link href="/" className="glass-brand flex items-center space-x-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-koji-rust to-koji-rust-dark flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-koji-green to-koji-green-dark flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
             <span className="text-lg">♻️</span>
           </div>
           {currentContext.title && (
@@ -115,7 +115,7 @@ export default function GlassHeader({ className = '' }: GlassHeaderProps) {
                 className="glass-action-button group"
                 title="Quick Scan"
               >
-                <Scan className="w-5 h-5 text-koji-teal group-hover:text-koji-rust transition-colors" />
+                <Scan className="w-5 h-5 text-koji-teal group-hover:text-koji-green transition-colors" />
               </Link>
             )}
 
@@ -123,7 +123,7 @@ export default function GlassHeader({ className = '' }: GlassHeaderProps) {
               className="glass-action-button group"
               title="User Menu"
             >
-              <User className="w-5 h-5 text-koji-teal group-hover:text-koji-rust transition-colors" />
+              <User className="w-5 h-5 text-koji-teal group-hover:text-koji-green transition-colors" />
             </button>
           </div>
 
@@ -138,7 +138,7 @@ export default function GlassHeader({ className = '' }: GlassHeaderProps) {
       {pathname === '/scan' && (
         <div className="px-4 pb-2">
           <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
-            <div className="h-full bg-gradient-to-r from-koji-rust to-koji-teal rounded-full w-0 animate-pulse"></div>
+            <div className="h-full bg-gradient-to-r from-koji-green to-koji-teal rounded-full w-0 animate-pulse"></div>
           </div>
         </div>
       )}

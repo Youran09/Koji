@@ -51,10 +51,10 @@ export default function JourneyTimeline({ steps, currentStep = 0 }: JourneyTimel
                 <div className={`
                   w-16 h-16 rounded-full flex items-center justify-center
                   ${isActive
-                    ? 'bg-koji-rust text-white'
+                    ? 'bg-koji-green text-white'
                     : 'bg-gray-100 text-gray-400 border-2 border-gray-200'
                   }
-                  ${isCurrent ? 'ring-4 ring-koji-rust/20' : ''}
+                  ${isCurrent ? 'ring-4 ring-koji-green/20' : ''}
                   transition-all duration-300
                 `}>
                   {isActive ? (
@@ -72,7 +72,7 @@ export default function JourneyTimeline({ steps, currentStep = 0 }: JourneyTimel
               <div className="flex-1 pb-8">
                 <div className={`
                   card
-                  ${isCurrent ? 'border-koji-rust shadow-lg' : ''}
+                  ${isCurrent ? 'border-koji-green shadow-lg' : ''}
                   transition-all duration-300
                 `}>
                   <div className="flex justify-between items-start mb-3">
@@ -85,7 +85,7 @@ export default function JourneyTimeline({ steps, currentStep = 0 }: JourneyTimel
                       </p>
                     </div>
                     {isCurrent && (
-                      <span className="px-3 py-1 bg-koji-rust text-white text-xs rounded-full">
+                      <span className="px-3 py-1 bg-koji-green text-white text-xs rounded-full">
                         Current
                       </span>
                     )}

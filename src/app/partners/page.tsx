@@ -199,7 +199,7 @@ export default function PartnersPage() {
         {selectedPartner && (
           <div className="mt-12">
             <div className="relative overflow-hidden rounded-3xl animate-scale-in">
-              <div className="absolute inset-0 bg-gradient-to-br from-koji-teal via-koji-teal-dark to-koji-rust opacity-90"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-koji-teal via-koji-teal-dark to-koji-green opacity-90"></div>
               <div className="relative glass-effect text-white p-8 border border-white/20">
                 <h2 className="heading-lg text-white mb-4">
                   {selectedPartner.name}
@@ -223,7 +223,7 @@ export default function PartnersPage() {
                     <div className="text-sm opacity-70 mb-2">Waste Types</div>
                     <div className="flex flex-wrap gap-2 mt-2">
                       {selectedPartner.wasteTypes.map(type => (
-                        <span key={type} className="badge badge-rust">
+                        <span key={type} className="badge badge-green">
                           {type}
                         </span>
                       ))}
@@ -247,7 +247,7 @@ export default function PartnersPage() {
         {/* Join CTA */}
         <div className="mt-16 text-center">
           <div className="relative overflow-hidden rounded-3xl max-w-2xl mx-auto">
-            <div className="absolute inset-0 bg-gradient-to-br from-koji-rust via-koji-rust-dark to-koji-teal opacity-90"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-koji-green via-koji-green-dark to-koji-teal opacity-90"></div>
             <div className="relative glass-effect p-12 border border-white/20 animate-scale-in">
               <h2 className="heading-lg text-white mb-6">
                 Become a Partner

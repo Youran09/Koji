@@ -124,43 +124,6 @@ export default function LearnPage() {
         </div>
       </section>
 
-      {/* Featured Articles */}
-      <section className="container">
-        <h2 className="heading-md mb-6 animate-fade-in">Featured Learning</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          {featuredArticles.map((article, index) => (
-            <div
-              key={article.id}
-              className={`card card-hover card-content hover-lift interactive-scale animate-slide-up animation-delay-${(index + 1) * 100}`}
-            >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-koji-rust to-koji-rust-dark rounded-2xl flex items-center justify-center text-3xl">
-                  {article.image}
-                </div>
-                <div className="flex-1">
-                  <h3 className="heading-sm mb-2">{article.title}</h3>
-                  <p className="text-sm text-secondary leading-relaxed mb-3">
-                    {article.description}
-                  </p>
-                  <div className="flex items-center gap-3 text-xs">
-                    <span className="flex items-center gap-1 text-secondary">
-                      <Clock className="w-4 h-4" />
-                      {article.readTime} min read
-                    </span>
-                    <span className={`px-2 py-1 rounded-full ${difficultyColors[article.difficulty]}`}>
-                      {article.difficulty}
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <button className="btn btn-primary btn-full">
-                Start Learning
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Category Filter */}
       <section className="container">
@@ -204,15 +167,6 @@ export default function LearnPage() {
                 </p>
               </div>
 
-              <div className="flex justify-between items-center mb-4 text-xs">
-                <span className="flex items-center gap-1 text-secondary">
-                  <Clock className="w-4 h-4" />
-                  {article.readTime} min
-                </span>
-                <span className={`px-2 py-1 rounded-full ${difficultyColors[article.difficulty]}`}>
-                  {article.difficulty}
-                </span>
-              </div>
 
               <button className="btn btn-secondary btn-full">
                 Read Article
@@ -225,7 +179,7 @@ export default function LearnPage() {
       {/* Quick Start Guide */}
       <section className="container">
         <div className="relative overflow-hidden rounded-3xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-koji-teal via-koji-teal-dark to-koji-rust opacity-90"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-koji-teal via-koji-teal-dark to-koji-green opacity-90"></div>
           <div className="relative glass-effect p-8 border border-white/20 text-white">
             <div className="text-center space-y-6">
               <h2 className="heading-lg">Ready to Start Your Koji Journey?</h2>
@@ -252,7 +206,7 @@ export default function LearnPage() {
         <h2 className="heading-md mb-6">Video Tutorials</h2>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="card card-hover hover-lift interactive-scale">
-            <div className="aspect-video bg-gradient-to-br from-koji-rust to-koji-rust-dark rounded-xl relative overflow-hidden mb-4">
+            <div className="aspect-video bg-gradient-to-br from-koji-green to-koji-green-dark rounded-xl relative overflow-hidden mb-4">
               <button className="absolute inset-0 flex items-center justify-center group">
                 <div className="w-16 h-16 glass-effect rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <Play className="w-8 h-8 text-white ml-1" />

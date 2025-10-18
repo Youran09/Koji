@@ -19,7 +19,7 @@ export default function HomePage() {
     { icon: Leaf, value: '2.5t', label: 'CO₂ Saved', color: 'text-green-600' },
     { icon: TrendingUp, value: '5k+', label: 'kg Diverted', color: 'text-blue-600' },
     { icon: Users, value: '20+', label: 'Partners', color: 'text-purple-600' },
-    { icon: Award, value: '10k+', label: 'Meals', color: 'text-orange-600' },
+    { icon: Award, value: '10k+', label: 'Meals', color: 'text-green-600' },
   ];
 
   return (
@@ -81,7 +81,7 @@ export default function HomePage() {
 
         <div className="space-y-4">
           <Link href="/scan" className="glass-card flex items-center gap-5 p-6 glass-animate-in">
-            <div className="w-14 h-14 bg-gradient-to-br from-koji-rust to-koji-rust-dark rounded-2xl flex items-center justify-center shadow-lg">
+            <div className="w-14 h-14 bg-gradient-to-br from-koji-green to-koji-green-dark rounded-2xl flex items-center justify-center shadow-lg">
               <Camera className="w-7 h-7 text-white" />
             </div>
             <div className="flex-1">
@@ -143,7 +143,7 @@ export default function HomePage() {
               title: 'Ferment',
               description: 'Controlled environment nurtures growth for 3-5 days',
               icon: '⏱️',
-              color: 'from-orange-500 to-orange-600'
+              color: 'from-green-500 to-green-600'
             },
             {
               step: '4️⃣',
@@ -160,7 +160,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-10 h-10 bg-gradient-to-br from-koji-rust to-koji-rust-dark rounded-full flex items-center justify-center shadow-md">
+                    <div className="w-10 h-10 bg-gradient-to-br from-koji-green to-koji-green-dark rounded-full flex items-center justify-center shadow-md">
                       <span className="text-lg">{item.step}</span>
                     </div>
                     <h3 className="heading-sm">{item.title}</h3>
@@ -197,7 +197,7 @@ export default function HomePage() {
       {/* Final CTA */}
       <section className="container">
         <div className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-koji-teal via-koji-teal-dark to-koji-rust opacity-90 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-koji-teal via-koji-teal-dark to-koji-green opacity-90 rounded-3xl"></div>
           <div className="relative glass-effect text-center space-y-6 p-8 rounded-3xl border border-white/20 animate-scale-in">
             <h2 className="text-3xl font-bold text-white">Ready to Start?</h2>
             <p className="text-lg text-white/90 max-w-md mx-auto leading-relaxed">

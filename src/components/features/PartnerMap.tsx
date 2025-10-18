@@ -73,11 +73,11 @@ export default function PartnerMap({
                 <div className={`
                   w-10 h-10 rounded-full border-3 transition-all duration-300 shadow-lg
                   ${isSelected || isHovered ? 'scale-125' : 'scale-100'}
-                  ${isSelected ? 'bg-koji-rust border-white shadow-xl' : 'bg-white border-koji-rust'}
+                  ${isSelected ? 'bg-koji-green border-white shadow-xl' : 'bg-white border-koji-green'}
                   hover:scale-110 interactive-scale
                 `}>
                   <div className={`w-full h-full rounded-full flex items-center justify-center ${
-                    isSelected ? 'bg-koji-rust' : 'bg-koji-rust'
+                    isSelected ? 'bg-koji-green' : 'bg-koji-green'
                   }`}>
                     <div className={`w-3 h-3 rounded-full ${
                       isSelected ? 'bg-white' : 'bg-white'
@@ -104,7 +104,7 @@ export default function PartnerMap({
       {selectedPartner && (
         <div className="card card-content animate-slide-up">
           <div className="flex items-start gap-4 mb-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-koji-rust to-koji-rust-dark rounded-2xl flex items-center justify-center flex-shrink-0">
+            <div className="w-12 h-12 bg-gradient-to-br from-koji-green to-koji-green-dark rounded-2xl flex items-center justify-center flex-shrink-0">
               <MapPin className="w-6 h-6 text-white" />
             </div>
             <div className="flex-1">
@@ -164,7 +164,7 @@ export default function PartnerMap({
             className={`
               card card-hover card-content cursor-pointer hover-lift interactive-scale
               animate-slide-up animation-delay-${(index + 1) * 100}
-              ${selectedPartnerId === partner.id || selectedPartner?.id === partner.id ? 'border-koji-rust shadow-lg' : ''}
+              ${selectedPartnerId === partner.id || selectedPartner?.id === partner.id ? 'border-koji-green shadow-lg' : ''}
             `}
             onClick={() => handlePartnerClick(partner)}
           >
@@ -177,7 +177,7 @@ export default function PartnerMap({
                   {partner.type.charAt(0).toUpperCase() + partner.type.slice(1)}
                 </p>
               </div>
-              <div className="w-10 h-10 bg-gradient-to-br from-koji-rust to-koji-rust-dark rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-koji-green to-koji-green-dark rounded-xl flex items-center justify-center">
                 <MapPin className="w-5 h-5 text-white" />
               </div>
             </div>
@@ -196,7 +196,7 @@ export default function PartnerMap({
                 </span>
               ))}
               {partner.wasteTypes.length > 3 && (
-                <span className="badge badge-rust">
+                <span className="badge badge-green">
                   +{partner.wasteTypes.length - 3} more
                 </span>
               )}

@@ -40,7 +40,7 @@ export default function BatchInfo({ batch }: BatchInfoProps) {
           <span className={`
             px-3 py-1 rounded-full text-xs font-medium
             ${batch.status === 'ready' ? 'bg-green-100 text-green-800' :
-              batch.status === 'aging' ? 'bg-orange-100 text-orange-800' :
+              batch.status === 'aging' ? 'bg-green-100 text-green-800' :
               batch.status === 'fermentation' ? 'bg-blue-100 text-blue-800' :
               'bg-gray-100 text-gray-800'}
           `}>
@@ -50,13 +50,13 @@ export default function BatchInfo({ batch }: BatchInfoProps) {
 
         <div className="grid grid-cols-2 gap-4">
           <div className="flex items-center gap-2">
-            <Calendar className="w-4 h-4 text-koji-rust" />
+            <Calendar className="w-4 h-4 text-koji-green" />
             <span className="text-sm">
               Produced: {formatDate(batch.productionDate)}
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <Timer className="w-4 h-4 text-koji-rust" />
+            <Timer className="w-4 h-4 text-koji-green" />
             <span className="text-sm">
               Fermentation: {batch.fermentation.duration} days
             </span>
@@ -67,7 +67,7 @@ export default function BatchInfo({ batch }: BatchInfoProps) {
       {/* Source Information */}
       <div className="card">
         <h2 className="text-lg font-semibold text-koji-teal mb-4 flex items-center gap-2">
-          <MapPin className="w-5 h-5 text-koji-rust" />
+          <MapPin className="w-5 h-5 text-koji-green" />
           Source Partner
         </h2>
 
@@ -93,7 +93,7 @@ export default function BatchInfo({ batch }: BatchInfoProps) {
           </div>
 
           <div className="flex items-center gap-2 text-sm">
-            <Recycle className="w-4 h-4 text-koji-rust" />
+            <Recycle className="w-4 h-4 text-koji-green" />
             <span>{formatWeight(batch.source.wasteWeight)} of food waste upcycled</span>
           </div>
         </div>
@@ -131,7 +131,7 @@ export default function BatchInfo({ batch }: BatchInfoProps) {
       {/* Fermentation Details */}
       <div className="card">
         <h2 className="text-lg font-semibold text-koji-teal mb-4 flex items-center gap-2">
-          <Package className="w-5 h-5 text-koji-rust" />
+          <Package className="w-5 h-5 text-koji-green" />
           Fermentation Process
         </h2>
 
@@ -184,7 +184,7 @@ export default function BatchInfo({ batch }: BatchInfoProps) {
       {batch.aging && (
         <div className="card">
           <h2 className="text-lg font-semibold text-koji-teal mb-4 flex items-center gap-2">
-            <Timer className="w-5 h-5 text-koji-rust" />
+            <Timer className="w-5 h-5 text-koji-green" />
             Aging Process
           </h2>
 
@@ -198,7 +198,7 @@ export default function BatchInfo({ batch }: BatchInfoProps) {
 
             <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-koji-rust to-koji-rust-light transition-all duration-300"
+                className="h-full bg-gradient-to-r from-koji-green to-koji-green-light transition-all duration-300"
                 style={{ width: `${Math.min(agingProgress, 100)}%` }}
               />
             </div>
@@ -235,7 +235,7 @@ export default function BatchInfo({ batch }: BatchInfoProps) {
       {batch.certifications && batch.certifications.length > 0 && (
         <div className="card">
           <h2 className="text-lg font-semibold text-koji-teal mb-4 flex items-center gap-2">
-            <Award className="w-5 h-5 text-koji-rust" />
+            <Award className="w-5 h-5 text-koji-green" />
             Certifications
           </h2>
           <div className="flex flex-wrap gap-2">

@@ -135,7 +135,7 @@ export default function BatchPage() {
           url: window.location.href,
         });
       } catch (error) {
-        console.log('Error sharing:', error);
+        // Handle sharing error silently
       }
     } else {
       // Fallback - copy to clipboard
@@ -148,7 +148,7 @@ export default function BatchPage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-koji-rust border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <div className="w-12 h-12 border-4 border-koji-green border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <p className="text-koji-teal-light">Loading batch information...</p>
         </div>
       </div>
@@ -180,7 +180,7 @@ export default function BatchPage() {
         <div className="flex justify-between items-center mb-8">
           <Link
             href="/scan"
-            className="inline-flex items-center gap-2 text-koji-teal hover:text-koji-rust transition-colors"
+            className="inline-flex items-center gap-2 text-koji-teal hover:text-koji-green transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Scanner
@@ -203,7 +203,7 @@ export default function BatchPage() {
             onClick={() => setActiveTab('journey')}
             className={`flex-1 py-2 px-4 rounded-md font-medium transition-colors ${
               activeTab === 'journey'
-                ? 'bg-koji-rust text-white'
+                ? 'bg-koji-green text-white'
                 : 'text-koji-teal hover:bg-gray-50'
             }`}
           >
@@ -213,7 +213,7 @@ export default function BatchPage() {
             onClick={() => setActiveTab('details')}
             className={`flex-1 py-2 px-4 rounded-md font-medium transition-colors ${
               activeTab === 'details'
-                ? 'bg-koji-rust text-white'
+                ? 'bg-koji-green text-white'
                 : 'text-koji-teal hover:bg-gray-50'
             }`}
           >
