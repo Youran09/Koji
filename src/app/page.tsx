@@ -86,7 +86,7 @@ export default function HomePage() {
             </div>
             <div className="flex-1">
               <h3 className="heading-sm mb-1">Scan & Trace</h3>
-              <p className="text-sm text-secondary">See your product's complete journey from waste to table</p>
+              <p className="text-sm text-secondary">See your product&apos;s complete journey from waste to table</p>
             </div>
             <ChevronRight className="w-6 h-6 text-tertiary transition-transform group-hover:translate-x-1" />
           </Link>
@@ -177,7 +177,7 @@ export default function HomePage() {
       <section className="container space-y-4">
         <div className="text-center">
           <h2 className="heading-md">Our Partners</h2>
-          <p className="text-base">Copenhagen's finest establishments</p>
+          <p className="text-base">Copenhagen&apos;s finest establishments</p>
         </div>
 
         <div className="grid grid-cols-2 gap-3">

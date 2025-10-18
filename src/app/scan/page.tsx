@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import QRScanner from '@/components/features/QRScanner';
-import { ArrowLeft, Package2, ShoppingBag, Lightbulb } from 'lucide-react';
+import { Package2, ShoppingBag, Lightbulb } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ScanPage() {
@@ -105,7 +105,7 @@ export default function ScanPage() {
         <div className="glass-hero text-center space-y-4">
           <Package2 className="w-12 h-12 mx-auto" />
           <div>
-            <h3 className="text-xl font-bold mb-2">Don't have a product yet?</h3>
+            <h3 className="text-xl font-bold mb-2">Don&apos;t have a product yet?</h3>
             <p className="opacity-90">
               Experience the transparency of our products. Each batch has its own unique story.
             </p>
