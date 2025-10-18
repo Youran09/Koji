@@ -24,16 +24,15 @@ export default function MobileLayout({ children }: MobileLayoutProps) {
       {/* Header */}
       <header className="sticky top-0 z-50 glass-effect border-b border-white/20 safe-top backdrop-blur-xl">
         <div className="container">
-          <div className="flex items-center justify-between h-18">
-            <Link href="/" className="flex items-center space-x-4 hover-lift interactive-scale">
+          <div className="flex items-center justify-between h-20">
+            <Link href="/" className="flex items-center space-x-3 hover-lift interactive-scale">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-koji-rust to-koji-rust-dark flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <span className="text-2xl">♻️</span>
               </div>
               <div>
-                <span className="text-xl font-semibold text-koji-teal font-display leading-tight">
+                <div className="heading-xl text-koji-teal">
                   Koji Copenhagen
-                </span>
-                <div className="w-full h-0.5 bg-gradient-to-r from-koji-rust to-transparent rounded-full mt-1"></div>
+                </div>
               </div>
             </Link>
 
@@ -48,7 +47,7 @@ export default function MobileLayout({ children }: MobileLayoutProps) {
       </header>
 
       {/* Main Content */}
-      <main className="pb-24">
+      <main className="pb-32">
         {children}
       </main>
 

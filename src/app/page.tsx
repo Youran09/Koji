@@ -28,7 +28,7 @@ export default function HomePage() {
   return (
     <div className="space-y-12">
       {/* Hero Section */}
-      <section className="container space-y-8 pt-6">
+      <section className="container space-y-8 pt-80">
         <div className="text-center space-y-6">
           <h1 className="heading-xl animate-fade-in">
             From Food Waste to{' '}
