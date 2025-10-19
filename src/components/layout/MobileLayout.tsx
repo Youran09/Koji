@@ -22,8 +22,17 @@ export default function MobileLayout({ children }: MobileLayoutProps) {
       {/* Google Glass-Style Header */}
       <GlassHeader />
 
+      {/* Prototype Disclaimer */}
+      <div className="fixed top-20 left-4 right-4 z-40 pointer-events-none">
+        <div className="glass-card bg-yellow-50/90 border-yellow-200/30 backdrop-blur-sm">
+          <p className="text-xs text-yellow-800 text-center leading-tight">
+            ⚠️ Prototype MVP - AI Generated Demo • Data is not real
+          </p>
+        </div>
+      </div>
+
       {/* Main Content */}
-      <main className="pb-6 relative z-10">
+      <main className="pb-6 pt-12 relative z-10">
         {children}
       </main>
 
