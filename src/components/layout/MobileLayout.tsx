@@ -28,9 +28,9 @@ export default function MobileLayout({ children }: MobileLayoutProps) {
       </main>
 
       {/* Prototype Disclaimer */}
-      <div className="fixed bottom-20 left-4 right-4 z-40 pointer-events-none">
-        <div className="glass-card bg-yellow-50/90 border-yellow-200/30 backdrop-blur-sm">
-          <p className="text-xs text-yellow-800 text-center leading-tight">
+      <div className="fixed bottom-4 left-4 right-4 z-[100] pointer-events-none">
+        <div className="bg-yellow-100/95 border border-yellow-300 rounded-lg p-2 shadow-lg backdrop-blur-sm">
+          <p className="text-xs text-yellow-900 text-center font-medium">
             ⚠️ Prototype MVP - AI Generated Demo • Data is not real
           </p>
         </div>
