@@ -23,18 +23,9 @@ export default function MobileLayout({ children }: MobileLayoutProps) {
       <GlassHeader />
 
       {/* Main Content */}
-      <main className="pb-24 relative z-10">
+      <main className="pb-6 relative z-10">
         {children}
       </main>
-
-      {/* Prototype Disclaimer */}
-      <div className="fixed bottom-4 left-4 right-4 z-[100] pointer-events-none">
-        <div className="bg-yellow-100/95 border border-yellow-300 rounded-lg p-2 shadow-lg backdrop-blur-sm">
-          <p className="text-xs text-yellow-900 text-center font-medium">
-            ⚠️ Prototype MVP - AI Generated Demo • Data is not real
-          </p>
-        </div>
-      </div>
 
       {/* Floating Navigation */}
       <FloatingNav />
