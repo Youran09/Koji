@@ -97,9 +97,7 @@ export default function PartnersPage() {
           <p className="text-lg text-secondary max-w-2xl mx-auto leading-relaxed">
             Copenhagen's finest restaurants and bakeries committed to reducing food waste
             through koji fermentation
-          </p>
-          <p className="text-sm max-w-2xl mx-auto text-yellow-700 bg-yellow-50 rounded-lg px-3 py-2 mt-4">
-            ⚠️ (Prototype MVP - AI Generated Demo - All numbers and data are not real)
+            <span className="text-sm text-yellow-700"> (Prototype)</span>
           </p>
         </div>
 
