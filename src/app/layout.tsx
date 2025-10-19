@@ -15,13 +15,13 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Koji Copenhagen - Trace Your Ferment",
-  description: "Track your Koji Copenhagen products from food waste source to finished ferment. Building transparency in the circular economy.",
-  keywords: "koji, fermentation, food waste, circular economy, copenhagen, sustainability",
+  title: "Koji Copenhagen - Trace Your Ferment (Prototype)",
+  description: "Track your Koji Copenhagen products from food waste source to finished ferment. Building transparency in the circular economy. Prototype MVP with demo data.",
+  keywords: "koji, fermentation, food waste, circular economy, copenhagen, sustainability, prototype",
   metadataBase: new URL('https://kojicopenhagen.com'),
   openGraph: {
-    title: "Koji Copenhagen - Trace Your Ferment",
-    description: "Track your koji products from source to table",
+    title: "Koji Copenhagen - Trace Your Ferment (Prototype)",
+    description: "Track your koji products from source to table - Prototype Demo",
     images: ["/og-image.jpg"],
   },
 };
