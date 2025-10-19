@@ -32,8 +32,10 @@ export default function HomePage() {
             <span className="gradient-text animate-pulse">Fermented Gold</span>
           </h1>
           <p className="text-lg max-w-lg mx-auto text-secondary animate-fade-in animation-delay-200">
-            Scan any Koji Copenhagen product to trace its journey from local restaurant waste to your table
-            <span className="text-sm text-yellow-700"> (Prototype)</span>
+            Scan to trace your product's journey
+          </p>
+          <p className="text-sm max-w-lg mx-auto text-yellow-700 bg-yellow-50 rounded-lg px-3 py-2 mt-4 animate-fade-in animation-delay-300">
+            ⚠️ (Prototype MVP - AI Generated Demo - Data is not real)
           </p>
         </div>
 
